@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-book-section {
+    background-color: #e8f5e9; /* Light green */
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"], select, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.reading-lists {
+    display: flex;
+    flex-direction: column; /* Stack on small screens */
+    gap: 20px;
+}
+
+@media (min-width: 600px) { /* Side-by-side on larger screens */
+    .reading-lists {
+        flex-direction: row;
+    }
+}
+
+.list-section {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #eee;
+}
+
+.book-details {
+    flex: 1; /* Take up available space */
+    min-width: 150px; /* Ensure space for details */
+}
+
+.book-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.book-author {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.book-status {
+    font-size: 0.85em;
+    padding: 3px 8px;
+    border-radius: 3px;
+    color: white;
+    margin-left: 10px;
+    white-space: nowrap; /* Prevent status from wrapping */
+}
+
+.status-not-started { background-color: #95a5a6; } /* Grey */
+.status-reading { background-color: #f39c12; }    /* Orange */
+.status-finished { background-color: #27ae60; }   /* Dark green */
+
+.book-actions {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px; /* Space from details on small screens */
+}
+
+@media (min-width: 600px) {
+    .book-actions {
+        margin-top: 0; /* No top margin on larger screens */
+    }
+}
+
+.book-actions button {
+    width: auto; /* Buttons adjust to content */
+    padding: 5px 10px;
+    font-size: 0.8em;
+    background-color: #3498db; /* Blue */
+}
+
+.book-actions button.mark-finished {
+    background-color: #2ecc71; /* Green */
+}
+.book-actions button.mark-reading {
+    background-color: #e67e22; /* Orange */
+}
+.book-actions button.remove-book {
+    background-color: #e74c3c; /* Red */
+}
+.book-actions button:hover {
+    opacity: 0.9;
+}

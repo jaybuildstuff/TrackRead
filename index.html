@@ -3,42 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synchronized Reading Tracker</title>
+    <title>TrackRead - Your Reading Journey</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>📖 Shared Reading Tracker</h1>
-
-        <div class="add-book-section">
-            <h2>Add a New Book</h2>
-            <input type="text" id="bookTitle" placeholder="Book Title" required>
-            <input type="text" id="bookAuthor" placeholder="Author">
-            <select id="readerSelect">
-                <option value="user">My Books</option>
-                <option value="girlfriend">My Girlfriend's Books</option>
-            </select>
-            <button id="addBookBtn">Add Book</button>
-        </div>
-
-        <div class="reading-lists">
-            <div class="list-section">
-                <h2>My Books</h2>
-                <ul id="userBooks">
-                    </ul>
-            </div>
-
-            <div class="list-section">
-                <h2>My Girlfriend's Books</h2>
-                <ul id="girlfriendBooks">
-                    </ul>
-            </div>
-        </div>
+    <div class="sidebar" id="sidebar">
+        <button class="close-sidebar" onclick="toggleSidebar()">&times;</button>
+        <h2>TrackRead</h2>
+        <ul>
+            <li><a href="#" id="authLink">Register / Login</a></li>
+            <li style="display:none;" id="logoutOption"><a href="#" id="logoutLink">Logout</a></li>
+            <li style="display:none;" id="dashboardOption"><a href="#" id="dashboardLink">Dashboard</a></li>
+            <li style="display:none;" id="booksReadOption"><a href="#" id="booksReadLink">Books Read</a></li>
+        </ul>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <div class="main-content" id="mainContent">
+        <header>
+            <button class="menu-button" onclick="toggleSidebar()">&#9776;</button>
+        </header>
+
+        <section id="welcome-section" class="page-section active">
+            <div class="welcome-container">
+                <h1 class="welcome-heading">Welcome to TrackRead!</h1>
+                <p class="welcome-tagline">
+                    Cultivate your reading habits. Compete, grow, and explore new worlds with your loved one.
+                    Track your progress, share insights, and celebrate every finished page.
+                </p>
+                <div class="button-group">
+                    <button class="primary-button" id="aboutUsButton">About TrackRead</button>
+                    <button class="secondary-button" id="helpSupportButton">Help & Support</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="aboutModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal('aboutModal')">&times;</span>
+                <h2>About TrackRead</h2>
+                <p>This platform was meticulously crafted by **Jay** to ignite and nurture the love of reading.</p>
+                <p>Its primary purpose is to provide a unique and engaging space for you and your partner to collaboratively embark on literary journeys. Track your individual progress, foster healthy competition, and create shared memories through the power of books.</p>
+                <p>Designed for seamless experience and insightful tracking, TrackRead aims to make every page count on your path to becoming a more avid and engaged reader.</p>
+            </div>
+        </div>
+
+        <div id="helpSupportModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal('helpSupportModal')">&times;</span>
+                <h2>Help & Support</h2>
+                <p>Should you encounter any issues or require assistance, please feel free to reach out:</p>
+                <p>Telegram: <a href="https://t.me/lolchange" target="_blank">@lolchange</a></p>
+                <p>We are here to ensure your reading journey is as smooth and enjoyable as possible.</p>
+            </div>
+        </div>
+
+        <section id="auth-section" class="page-section hidden">
+            <div class="auth-container">
+                </div>
+        </section>
+
+        <section id="dashboard-section" class="page-section hidden">
+            <div class="dashboard-container">
+                <h2>Your Reading Dashboard</h2>
+                </div>
+        </section>
+
+        <section id="books-read-section" class="page-section hidden">
+            <div class="books-read-container">
+                <h2>Completed Books</h2>
+                </div>
+        </section>
+    </div>
 
     <script src="script.js"></script>
 </body>
-</html>
+    </html>

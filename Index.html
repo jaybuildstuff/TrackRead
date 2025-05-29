@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronized Reading Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📖 Shared Reading Tracker</h1>
+
+        <div class="add-book-section">
+            <h2>Add a New Book</h2>
+            <input type="text" id="bookTitle" placeholder="Book Title" required>
+            <input type="text" id="bookAuthor" placeholder="Author">
+            <select id="readerSelect">
+                <option value="user">My Books</option>
+                <option value="girlfriend">My Girlfriend's Books</option>
+            </select>
+            <button id="addBookBtn">Add Book</button>
+        </div>
+
+        <div class="reading-lists">
+            <div class="list-section">
+                <h2>My Books</h2>
+                <ul id="userBooks">
+                    </ul>
+            </div>
+
+            <div class="list-section">
+                <h2>My Girlfriend's Books</h2>
+                <ul id="girlfriendBooks">
+                    </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
